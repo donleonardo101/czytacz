@@ -1,10 +1,10 @@
 import pytesseract
+from pdf2image import convert_from_path
+import glob
 
 # from PIL import Image
 # from googletrans import Translator
-from pdf2image import convert_from_path
 # from PyPDF2 import PdfFileReader
-import glob
 
 pdfs = glob.glob(r"./rosliny.pdf")
 # output_folder = glob.glob(r"./")
@@ -19,6 +19,9 @@ for pdf_path in pdfs:
             the_file.write(text)
 
 print("conversion complete")
+
+# https://stackoverflow.com/questions/66995340/pdf-to-text-convert-using-python-pytesseract
+
 
         # with open(doc_file, mode='w') as the_file: 
         #     the_file.write(text) 
