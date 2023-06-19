@@ -1,10 +1,13 @@
+import os
 import pytesseract
-# from PIL import Image
+import glob
+from PIL import Image
 # from googletrans import Translator
 from pdf2image import convert_from_path
-import glob
+from PyPDF2 import PdfFileReader
 
-pdfs = glob.glob(r"./probki_pdf/chwast.pdf")
+pdfs = glob.glob(r"./rosliny.pdf")
+output_folder = glob.glob(r"./")
 
 for pdf_path in pdfs:
     pages = convert_from_path(pdf_path, 500)
@@ -14,6 +17,11 @@ for pdf_path in pdfs:
 
         with open(f'{pdf_path[:-4]}_page{pageNum}.txt', 'w') as the_file:
             the_file.write(text)
+
+print("conversion complete")
+
+        # with open(doc_file, mode='w') as the_file: 
+        #     the_file.write(text) 
 
 
 # cd /tmp
