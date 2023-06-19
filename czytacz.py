@@ -1,13 +1,13 @@
-import os
 import pytesseract
-import glob
-from PIL import Image
+
+# from PIL import Image
 # from googletrans import Translator
 from pdf2image import convert_from_path
-from PyPDF2 import PdfFileReader
+# from PyPDF2 import PdfFileReader
+import glob
 
 pdfs = glob.glob(r"./rosliny.pdf")
-output_folder = glob.glob(r"./")
+# output_folder = glob.glob(r"./")
 
 for pdf_path in pdfs:
     pages = convert_from_path(pdf_path, 500)
