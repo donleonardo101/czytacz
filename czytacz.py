@@ -14,6 +14,8 @@ for pdf_path in pdfs:
 
     for pageNum,imgBlob in enumerate(pages):
         text = pytesseract.image_to_string(imgBlob,lang='pol')
+        # 'ger' 'fra' 'eng'
+        # https://pypi.org/project/pytesseract/
 
         with open(f'{pdf_path[:-4]}_page{pageNum}.txt', 'w') as the_file:
             the_file.write(text)
@@ -34,6 +36,7 @@ print("conversion complete")
 # source ~/.bashrc
 # conda search "^python$"
 # conda create --name czytacz python=3.10.11
+
 # conda activate czytacz
 # python --version
 # conda deactivate
@@ -42,4 +45,7 @@ print("conversion complete")
 # conda install -c conda-forge pytesseract
 # conda install -c conda-forge tesseract
 # pip install pdf2image
-# python czytacz.py
+#
+# # przy kazdym uzyciu:
+# conda activate czytacz
+# python -v czytacz.py
