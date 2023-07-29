@@ -2,9 +2,14 @@ import pytesseract
 from pdf2image import convert_from_path
 import glob
 
+# https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html#simplest-invocation-to-ocr-an-image
+
 # from PIL import Image
 # from googletrans import Translator
 # from PyPDF2 import PdfFileReader
+
+print(pytesseract.get_tesseract_version())
+# print(pytesseract.get_languages())
 
 pdfs = glob.glob(r"./rosliny.pdf")
 # output_folder = glob.glob(r"./")
