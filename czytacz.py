@@ -54,3 +54,6 @@ print("conversion complete")
 # # przy kazdym uzyciu:
 # conda activate czytacz
 # python -v czytacz.py
+
+# /home/abc/gity/US/OCR_useme/TESERAKT_STANDALONE
+#tesseract --tessdata-dir /usr/share/tesseract-ocr/5/tessdata ./eurotext.png eurotext-eng -l eng --psm     3 pdf
