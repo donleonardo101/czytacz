@@ -21,13 +21,13 @@ try:
     )
 
     # Alternatively you can use translate_document() with file IO objects
-    with open(input_path, "rb") as in_file, open(output_path, "wb") as out_file:
-        translator.translate_document(
-            in_file,
-            out_file,
-            target_lang="DE",
-            formality="more"
-        )
+    # with open(input_path, "rb") as in_file, open(output_path, "wb") as out_file:
+    #     translator.translate_document(
+    #         in_file,
+    #         out_file,
+    #         target_lang="DE",
+    #         formality="more"
+    #     )
 
 except deepl.DocumentTranslationException as error:
     # If an error occurs during document translation after the document was
