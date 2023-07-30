@@ -1,8 +1,9 @@
 import deepl
+import requests
 
 # pip install --upgrade deepl
 
-auth_key = "f63c02c5-f056-..."  # Replace with your key
+auth_key = "DEEPL_API_KEY"  # zmienna srodowiskowa
 translator = deepl.Translator(auth_key)
 
 result = translator.translate_text("Hello, world!", target_lang="FR")
@@ -16,7 +17,7 @@ try:
     translator.translate_document_from_filepath(
         input_path,
         output_path,
-        target_lang="DE",
+        target_lang="EN",
         formality="more"
     )
 
