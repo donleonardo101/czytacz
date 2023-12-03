@@ -22,10 +22,10 @@ print(pytesseract.get_tesseract_version())
 # print(pytesseract.get_languages())
 
 
-pdfs = open(os.path.join(os.path.dirname(__file__), 'rosliny.pdf'), encoding="utf-8", errors="ignore")
+# pdfs = open(os.path.join(os.path.dirname(__file__), 'rosliny.pdf'), encoding="utf-8", errors="ignore")
 # poppler_path = r"C:\path\to\poppler-xx\bin"
 
-# pdfs = glob.glob(r"./rosliny.pdf")
+pdfs = glob.glob(r"./rosliny.pdf")
 # output_folder = glob.glob(r"./")
 
 for pdf_path in pdfs:
