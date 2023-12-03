@@ -2,8 +2,12 @@ import pytesseract
 from pdf2image import convert_from_path
 import glob
 
-# https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html#simplest-invocation-to-ocr-an-image
+# pipreqs
+# pip install -r requirements.txt
+# python -v czytacz.py
 
+
+# https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html#simplest-invocation-to-ocr-an-image
 # from PIL import Image
 # from googletrans import Translator
 # from PyPDF2 import PdfFileReader
@@ -17,21 +21,20 @@ pdfs = glob.glob(r"./rosliny.pdf")
 for pdf_path in pdfs:
     pages = convert_from_path(pdf_path, 500)
 
-    for pageNum,imgBlob in enumerate(pages):
-        text = pytesseract.image_to_string(imgBlob,lang='pol')
+    for pageNum, imgBlob in enumerate(pages):
+        text = pytesseract.image_to_string(imgBlob, lang='pol')
         # 'ger' 'fra' 'eng'
         # https://pypi.org/project/pytesseract/
 
         with open(f'{pdf_path[:-4]}_page{pageNum}.txt', 'w') as the_file:
             the_file.write(text)
 
-print("conversion complete")
+print("ZMIANA PDF NA TEKST ZAKONCZONA")
 
 # https://stackoverflow.com/questions/66995340/pdf-to-text-convert-using-python-pytesseract
 
-
-        # with open(doc_file, mode='w') as the_file: 
-        #     the_file.write(text) 
+# with open(doc_file, mode='w') as the_file:
+#     the_file.write(text)
 
 
 # cd /tmp
@@ -56,4 +59,4 @@ print("conversion complete")
 # python -v czytacz.py
 
 # /home/abc/gity/US/OCR_useme/TESERAKT_STANDALONE
-#tesseract --tessdata-dir /usr/share/tesseract-ocr/5/tessdata ./eurotext.png eurotext-eng -l eng --psm     3 pdf
+# tesseract --tessdata-dir /usr/share/tesseract-ocr/5/tessdata ./eurotext.png eurotext-eng -l eng --psm     3 pdf
