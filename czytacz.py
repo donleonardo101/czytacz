@@ -2,6 +2,10 @@ import pytesseract
 from pdf2image import convert_from_path
 import glob
 
+
+# conda install -c conda-forge pytesseract
+# conda install -c conda-forge tesseract
+# pip install pdf2image
 # pipreqs
 # pip install -r requirements.txt
 # python -v czytacz.py
