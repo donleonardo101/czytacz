@@ -1,8 +1,9 @@
 import pytesseract
 from pdf2image import convert_from_path
 import glob
+import os.path
 
-
+# conda install -c conda-forge poppler
 # conda install -c conda-forge pytesseract
 # conda install -c conda-forge tesseract
 # pip install pdf2image
@@ -16,10 +17,15 @@ import glob
 # from googletrans import Translator
 # from PyPDF2 import PdfFileReader
 
+
 print(pytesseract.get_tesseract_version())
 # print(pytesseract.get_languages())
 
-pdfs = glob.glob(r"./rosliny.pdf")
+
+pdfs = open(os.path.join(os.path.dirname(__file__), 'rosliny.pdf'), encoding="utf-8", errors="ignore")
+# poppler_path = r"C:\path\to\poppler-xx\bin"
+
+# pdfs = glob.glob(r"./rosliny.pdf")
 # output_folder = glob.glob(r"./")
 
 for pdf_path in pdfs:
